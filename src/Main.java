@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Main{
     public static void main(String[] args){
@@ -12,6 +13,8 @@ public class Main{
         int location=input.nextInt();
         input.nextLine();
         Customer customer=new Customer(userID,username,email,location);
+        customer.printWelcomeMessage();
+        ArrayList<Restaurant> restaurants=new ArrayList<Restaurant>();
 
     }
 }

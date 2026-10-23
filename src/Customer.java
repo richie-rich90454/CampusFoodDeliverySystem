@@ -38,4 +38,7 @@ public class Customer{
     public void setOrder(Order order){
         this.order=order;
     }
+    public void printWelcomeMessage(){
+        System.out.println("Welcome, "+name+"! Your food goes to "+roomNumber);
+    }
 }

@@ -13,5 +13,37 @@ public class Restaurant {
         this.dishes=dishes;
         this.soldTimes=soldTimes;
     }
-
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name=name;
+    }
+    public boolean isOpen(){
+        return isOpen;
+    }
+    public void setOpen(boolean open){
+        isOpen=open;
+    }
+    public String getCategory(){
+        return category;
+    }
+    public void setCategory(String category){
+        this.category=category;
+    }
+    public ArrayList<Dish> getDishes(){
+        return dishes;
+    }
+    public void setDishes(ArrayList<Dish> dishes){
+        this.dishes=dishes;
+    }
+    public void addDish(Dish dish){
+        dishes.add(dish);
+    }
+    public void removeDish(Dish dish){
+        dishes.remove(dish);
+    }
+    public int getSoldTimes(){
+        return soldTimes;
+    }
 }

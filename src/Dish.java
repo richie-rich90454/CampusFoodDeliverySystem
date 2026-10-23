@@ -11,4 +11,7 @@ public class Dish{
     public double getPrice(){
         return price;
     }
+    public boolean equals(Dish dish){
+
+    }
 }
