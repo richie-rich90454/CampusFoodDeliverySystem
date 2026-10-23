@@ -24,6 +24,14 @@ public class Main{
         coolPizzaDishes.add(new Dish("Medium-well Steak",20.26));
         coolPizza.setDishes(coolPizzaDishes);
         restaurants.add(coolPizza);
-
+        //stuff for restaurant 2
+        Restaurant busanBowl=new Restaurant("Busan Bowl", true, "Korean", null, 0);
+        ArrayList<Dish> busanBowlDishes=new ArrayList<>();
+        busanBowlDishes.add(new Dish("Kimbap rolls", 19.88));
+        busanBowlDishes.add(new Dish("Fried Chicken", 17.35));
+        busanBowlDishes.add(new Dish("Busan Specialty", 20.26));
+        busanBowl.setDishes(busanBowlDishes);
+        restaurants.add(busanBowl);
+        //stuff for restaurant 3
     }
 }
