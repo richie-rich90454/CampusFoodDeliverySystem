@@ -12,6 +12,9 @@ public class Dish{
         return price;
     }
     public boolean equals(Dish dish){
-
+        if (this.name.equals(dish.name)&&this.price==dish.price){
+            return true;
+        }
+        return false;
     }
 }
