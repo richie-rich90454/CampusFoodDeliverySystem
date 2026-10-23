@@ -15,6 +15,15 @@ public class Main{
         Customer customer=new Customer(userID,username,email,location);
         customer.printWelcomeMessage();
         ArrayList<Restaurant> restaurants=new ArrayList<Restaurant>();
+        //stuff for restaurant 1
+        Restaurant coolPizza=new Restaurant("Cool Pizza", true, "Italian", null, 0);
+        ArrayList<Dish> coolPizzaDishes=new ArrayList<>();
+        coolPizzaDishes.add(new Dish("Margherita Pizza", 12.50));
+        coolPizzaDishes.add(new Dish("Fettuccine Alfredo", 14.00));
+        coolPizzaDishes.add(new Dish("Tiramisu", 6.50));
+        coolPizzaDishes.add(new Dish("Medium-well Steak",20.26));
+        coolPizza.setDishes(coolPizzaDishes);
+        restaurants.add(coolPizza);
 
     }
 }
