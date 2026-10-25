@@ -38,20 +38,34 @@ public class Main{
         sunsetPancakesDishes.add(new Dish("Chicken Sandwich", 10.15));
         sunsetPancakes.setDishes(sunsetPancakesDishes);
         restaurants.add(sunsetPancakes);
-        System.out.println("---------------Menu---------------");
-        for (Restaurant restaurant:restaurants){
-            System.out.println(restaurant.toString());
-        }
-        System.out.print("Pick a restaurant (1-3): ");
-        int userRestaurantChoice=InputOutput.safeIntInput(1,3)-1;
-        Restaurant userChoiceRestaurant=restaurants.get(userRestaurantChoice);
-        System.out.println(userChoiceRestaurant.getMenu());
-        System.out.print("Do you want to order multiple different dishes (true/false): ");
-        boolean multipleDifferentDishes =InputOutput.safeBooleanInput();
-        ArrayList<Dish> dishesOrdered=new ArrayList<>();
-        if (multipleDifferentDishes){
-            boolean continueOrdering=true;
-            while (continueOrdering){
+        boolean continueOrders=true;
+        while (continueOrders){
+            System.out.println("---------------Menu---------------");
+            for (Restaurant restaurant:restaurants){
+                System.out.println(restaurant.toString());
+            }
+            System.out.print("Pick a restaurant (1-3): ");
+            int userRestaurantChoice=InputOutput.safeIntInput(1,3)-1;
+            Restaurant userChoiceRestaurant=restaurants.get(userRestaurantChoice);
+            System.out.println(userChoiceRestaurant.getMenu());
+            System.out.print("Do you want to order multiple different dishes (true/false): ");
+            boolean multipleDifferentDishes=InputOutput.safeBooleanInput();
+            ArrayList<Dish> dishesOrdered=new ArrayList<>();
+            if (multipleDifferentDishes){
+                boolean continueOrdering=true;
+                while (continueOrdering){
+                    System.out.print("Pick a dish(1-3): ");
+                    int dishChoice=InputOutput.safeIntInput(1,3)-1;
+                    System.out.print("How many? (1-10): ");
+                    int dishQuantity=InputOutput.safeIntInput(1,10);
+                    for (int i=0;i<dishQuantity;i++){
+                        dishesOrdered.add(userChoiceRestaurant.getDishes().get(dishChoice));
+                    }
+                    System.out.print("Do you want to continue ordering? (true/false) ");
+                    continueOrdering=InputOutput.safeBooleanInput();
+                }
+            }
+            else{
                 System.out.print("Pick a dish(1-3): ");
                 int dishChoice=InputOutput.safeIntInput(1,3)-1;
                 System.out.print("How many? (1-10): ");
@@ -59,28 +73,22 @@ public class Main{
                 for (int i=0;i<dishQuantity;i++){
                     dishesOrdered.add(userChoiceRestaurant.getDishes().get(dishChoice));
                 }
-                System.out.print("Do you want to continue ordering? (true/false) ");
-                continueOrdering=InputOutput.safeBooleanInput();
             }
-        }
-        else{
-            System.out.print("Pick a dish(1-3): ");
-            int dishChoice=InputOutput.safeIntInput(1,3)-1;
-            System.out.print("How many? (1-10): ");
-            int dishQuantity=InputOutput.safeIntInput(1,10);
-            for (int i=0;i<dishQuantity;i++){
-                dishesOrdered.add(userChoiceRestaurant.getDishes().get(dishChoice));
-            }
-        }
-        Order userOrder=new Order("ORD-"+orderIndex, dishesOrdered, customer, userChoiceRestaurant);
-        System.out.print("\n\n"+userOrder);
-        System.out.print("Has the food been delivered? (y/n): ");
-        String foodDeliveryStatus=InputOutput.safeStringInput();
-
-        while (!foodDeliveryStatus.equals("y")){
+            Order userOrder=new Order("ORD-"+orderIndex, dishesOrdered, customer, userChoiceRestaurant);
+            orderIndex++;
+            System.out.print("\n\n"+userOrder);
             System.out.print("Has the food been delivered? (y/n): ");
-            foodDeliveryStatus=InputOutput.safeStringInput();
+            String foodDeliveryStatus=InputOutput.safeStringInput();
+
+            while (!foodDeliveryStatus.equals("y")){
+                System.out.print("Has the food been delivered? (y/n): ");
+                foodDeliveryStatus=InputOutput.safeStringInput();
+            }
+            System.out.print(userOrder.getOrderID()+" - delivered.\n\n");
+            System.out.print("Do you want to make another order? (true/false)");
+            continueOrders=InputOutput.safeBooleanInput();
+            System.out.println("\n\n\n");
         }
-        System.out.print(userOrder.getOrderID()+" - delivered.");
+
     }
 }
