@@ -36,11 +36,17 @@ public class Main{
         ArrayList<Dish> sunsetPancakesDishes=new ArrayList<>();
         sunsetPancakesDishes.add(new Dish("Maple Syrup with Pancakes", 9.95));
         sunsetPancakesDishes.add(new Dish("French Fries", 9.90));
-        sunsetPancakesDishes.add(new Dish("Omelets", 8.95));
         sunsetPancakesDishes.add(new Dish("Chicken Sandwich", 10.15));
         sunsetPancakes.setDishes(sunsetPancakesDishes);
         restaurants.add(sunsetPancakes);
         System.out.println("---------------Menu---------------");
+        for (Restaurant restaurant:restaurants){
+            System.out.println(restaurant.toString());
+        }
+        System.out.print("Pick a restaurant (1-3): ");
+        int userRestaurantChoice=InputOutput.safeIntInput();
+        Restaurant userChoiceRestaurant=restaurants.get(userRestaurantChoice);
+        System.out.println(userChoiceRestaurant.getMenu());
 
     }
 }
