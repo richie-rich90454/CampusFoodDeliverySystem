@@ -24,8 +24,8 @@ public class InputOutput {
                 isValid=true;
             }
             else {
-                System.out.println("Please enter a valid String input: ");
-                stringInput = input.nextLine();
+                System.out.print("Please enter a valid String input: ");
+                stringInput=input.nextLine();
             }
         }
         return stringInput;
@@ -40,10 +40,38 @@ public class InputOutput {
                 isValid=true;
             }
             catch (NumberFormatException exception){
-                System.out.println("Please enter a valid integer input: ");
+                System.out.print("Please enter a valid integer input: ");
             }
         }
-        input.nextLine();
         return intInput;
+    }
+    public static int safeIntInput(int min, int max){
+        boolean isValid=false;
+        int intInput=0;
+        while (!isValid){
+            String stringInput=input.nextLine();
+            try{
+                intInput=Integer.parseInt(stringInput);
+                isValid=(intInput>=min&&intInput<=max);
+            }
+            catch (NumberFormatException exception){
+                System.out.print("Please enter a valid integer input: ");
+            }
+        }
+        return intInput;
+    }
+    public static boolean safeBooleanInput(){
+        boolean isValid=false;
+        boolean booleanInput=false;
+        while (!isValid){
+            String stringInput=input.nextLine();
+            try{
+                booleanInput=Boolean.parseBoolean(stringInput);
+            }
+            catch (NumberFormatException exception){
+                System.out.print("Please enter a valid boolean input: ");
+            }
+        }
+        return booleanInput;
     }
 }
