@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Order{
     public String orderID;
     public ArrayList<Dish> dishes;
     public double total;
     public Customer customer;
-    public Order(String orderID, ArrayList<Dish> dishes, Customer customer){
+    public Order(String orderID, ArrayList<Dish> dishes, Customer customer, Restaurant restaurant){
         this.orderID=orderID;
         this.dishes=dishes;
         this.total=0;
@@ -13,5 +14,26 @@ public class Order{
             total+=dish.getPrice();
         }
         this.customer=new Customer(customer.getName(), customer.getUserID(), customer.getEmail(), customer.getRoomNumber());
+        restaurant.setSoldTimes(restaurant.getSoldTimes()+1);
+    }
+    public String toString(){
+        String returnString="Order: "+orderID+"\n";
+        returnString+="Customer: "+customer.getName()+"\n";
+        returnString+="Customer Email: "+customer.getEmail()+"\n";
+        returnString+="Restaurant: "+customer.getUserID()+"\n";
+        returnString+="Delivers to: "+customer.getRoomNumber()+"\nItems: \n";
+        HashMap<Dish, Integer> dishNumbers=new HashMap<>();
+        for (Dish dish: dishes){
+            //refer to https://www.w3schools.com/java/java_hashmap.asp
+            dishNumbers.put(dish, dishNumbers.getOrDefault(dish,0)+1);
+        }
+        for (Dish dish: dishNumbers.keySet()){
+            if (dishNumbers.get(dish)==0){
+                continue;
+            }
+            returnString+=dishNumbers.get(dish)+" x "+dish.getName()+"\n";
+        }
+        returnString+="Total: "+total+"\n";
+        return returnString;
     }
 }
