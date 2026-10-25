@@ -55,7 +55,7 @@ public class InputOutput {
                 isValid=(intInput>=min&&intInput<=max);
             }
             catch (NumberFormatException exception){
-                System.out.print("Please enter a valid integer input: ");
+                System.out.print("Please enter a valid integer input between "+min+" and "+max+": ");
             }
         }
         return intInput;
