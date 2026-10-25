@@ -11,7 +11,7 @@ public class Main{
         String email=InputOutput.validEmailInput();
         System.out.print("Please enter your delivery location: ");
         int location=InputOutput.safeIntInput();
-        Customer customer=new Customer(userID,username,email,location);
+        Customer customer=new Customer(username,userID,email,location);
         customer.printWelcomeMessage();
         ArrayList<Restaurant> restaurants=new ArrayList<Restaurant>();
         //stuff for restaurant 1
@@ -73,7 +73,7 @@ public class Main{
             }
         }
         Order userOrder=new Order("ORD-"+orderIndex, dishesOrdered, customer, userChoiceRestaurant);
-        System.out.print(userOrder);
+        System.out.print("\n\n"+userOrder);
         System.out.print("Has the food been delivered? (y/n): ");
         String foodDeliveryStatus=InputOutput.safeStringInput();
 
