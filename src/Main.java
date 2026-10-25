@@ -40,6 +40,7 @@ public class Main{
         sunsetPancakesDishes.add(new Dish("Chicken Sandwich", 10.15));
         sunsetPancakes.setDishes(sunsetPancakesDishes);
         restaurants.add(sunsetPancakes);
+        System.out.println("---------------Menu---------------");
 
     }
 }

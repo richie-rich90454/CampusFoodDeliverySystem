@@ -46,4 +46,15 @@ public class Restaurant {
     public int getSoldTimes(){
         return soldTimes;
     }
+    public String toString(){
+        String openStatus="CLOSED";
+        if (isOpen){
+            openStatus="OPEN";
+        }
+        String numberOfOrders="new - no orders yet";
+        if (soldTimes>0){
+            numberOfOrders=soldTimes+" order(s)";
+        }
+        return name+" | "+category+" | "+openStatus+" | "+numberOfOrders+" | "+dishes.size()+" dish(es)";
+    }
 }
