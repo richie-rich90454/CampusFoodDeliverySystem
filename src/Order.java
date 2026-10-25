@@ -36,4 +36,7 @@ public class Order{
         returnString+="Total: "+total+"\n";
         return returnString;
     }
+    public String getOrderID(){
+        return orderID;
+    }
 }

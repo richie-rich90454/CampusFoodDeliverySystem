@@ -53,10 +53,13 @@ public class InputOutput {
             try{
                 intInput=Integer.parseInt(stringInput);
                 isValid=(intInput>=min&&intInput<=max);
+                if (isValid){
+                    break;
+                }
             }
             catch (NumberFormatException exception){
-                System.out.print("Please enter a valid integer input between "+min+" and "+max+": ");
             }
+            System.out.print("Please enter a valid integer input between "+min+" and "+max+": ");
         }
         return intInput;
     }
@@ -67,6 +70,7 @@ public class InputOutput {
             String stringInput=input.nextLine();
             try{
                 booleanInput=Boolean.parseBoolean(stringInput);
+                isValid=true;
             }
             catch (NumberFormatException exception){
                 System.out.print("Please enter a valid boolean input: ");

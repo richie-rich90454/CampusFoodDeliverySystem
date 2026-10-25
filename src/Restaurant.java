@@ -63,7 +63,7 @@ public class Restaurant {
     public String getMenu(){
         String menuString=name+" menu: \n";
         for (int i=1;i<=dishes.size();i++){
-            menuString+=i+". "+dishes.get(i-1).getName()+"\t$"+dishes.get(i-1).getName()+"\n";
+            menuString+=i+". "+dishes.get(i-1).getName()+"\t$"+dishes.get(i-1).getPrice()+"\n";
         }
         return menuString;
     }
