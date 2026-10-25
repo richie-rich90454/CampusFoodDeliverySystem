@@ -46,6 +46,9 @@ public class Restaurant {
     public int getSoldTimes(){
         return soldTimes;
     }
+    public void setSoldTimes(int soldTimes){
+        this.soldTimes=soldTimes;
+    }
     public String toString(){
         String openStatus="CLOSED";
         if (isOpen){
@@ -56,5 +59,12 @@ public class Restaurant {
             numberOfOrders=soldTimes+" order(s)";
         }
         return name+" | "+category+" | "+openStatus+" | "+numberOfOrders+" | "+dishes.size()+" dish(es)";
+    }
+    public String getMenu(){
+        String menuString=name+" menu: \n";
+        for (int i=1;i<=dishes.size();i++){
+            menuString+=i+". "+dishes.get(i-1).getName()+"\t$"+dishes.get(i-1).getName()+"\n";
+        }
+        return menuString;
     }
 }
