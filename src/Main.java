@@ -51,20 +51,20 @@ public class Main{
                 continue;
             }
             System.out.println(userChoiceRestaurant.getMenu());
-            System.out.print("Do you want to order multiple different dishes (true/false): ");
+            System.out.print("Do you want to order multiple different dishes? (true/false): ");
             boolean multipleDifferentDishes=InputOutput.safeBooleanInput();
             ArrayList<Dish> dishesOrdered=new ArrayList<>();
             if (multipleDifferentDishes){
                 boolean continueOrdering=true;
                 while (continueOrdering){
-                    System.out.print("Pick a dish(1-3): ");
+                    System.out.print("Pick a dish (1-3): ");
                     int dishChoice=InputOutput.safeIntInput(1,3)-1;
                     System.out.print("How many? (1-10): ");
                     int dishQuantity=InputOutput.safeIntInput(1,10);
                     for (int i=0;i<dishQuantity;i++){
                         dishesOrdered.add(userChoiceRestaurant.getDishes().get(dishChoice));
                     }
-                    System.out.print("Do you want to continue ordering? (true/false) ");
+                    System.out.print("Do you want to continue ordering? (true/false): ");
                     continueOrdering=InputOutput.safeBooleanInput();
                 }
             }
@@ -88,7 +88,7 @@ public class Main{
                 foodDeliveryStatus=InputOutput.safeStringInput();
             }
             System.out.print(userOrder.getOrderID()+" - delivered.\n\n");
-            System.out.print("Do you want to make another order? (true/false)");
+            System.out.print("Do you want to make another order? (true/false): ");
             continueOrders=InputOutput.safeBooleanInput();
             System.out.println("\n\n\n");
         }
