@@ -6,6 +6,7 @@ public class Order{
     public ArrayList<Dish> dishes;
     public double total;
     public Customer customer;
+    public String restaurantName;
     public Order(String orderID, ArrayList<Dish> dishes, Customer customer, Restaurant restaurant){
         this.orderID=orderID;
         this.dishes=dishes;
@@ -18,12 +19,13 @@ public class Order{
         }
         this.customer=new Customer(customer.getName(), customer.getUserID(), customer.getEmail(), customer.getRoomNumber());
         restaurant.setSoldTimes(restaurant.getSoldTimes()+1);
+        this.restaurantName=restaurant.getName();
     }
     public String toString(){
         String returnString="Order: "+orderID+"\n";
         returnString+="Customer: "+customer.getName()+"\n";
         returnString+="Customer Email: "+customer.getEmail()+"\n";
-        returnString+="Restaurant: "+customer.getUserID()+"\n";
+        returnString+="Restaurant: "+restaurantName+"\n";
         returnString+="Delivers to: "+customer.getRoomNumber()+"\nItems: \n";
         HashMap<Dish, Integer> dishNumbers=new HashMap<>();
         for (Dish dish: dishes){

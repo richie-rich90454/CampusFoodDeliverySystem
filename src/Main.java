@@ -70,7 +70,7 @@ public class Main{
                 }
             }
             else{
-                System.out.print("Pick a dish(1-3): ");
+                System.out.print("Pick a dish (1-3): ");
                 int dishChoice=InputOutput.safeIntInput(1,3)-1;
                 System.out.print("How many? (1-10): ");
                 int dishQuantity=InputOutput.safeIntInput(1,10);
