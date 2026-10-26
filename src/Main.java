@@ -48,6 +48,7 @@ public class Main{
             int userRestaurantChoice=InputOutput.safeIntInput(1,3)-1;
             Restaurant userChoiceRestaurant=restaurants.get(userRestaurantChoice);
             if (!userChoiceRestaurant.isOpen()){
+                System.out.println("Restaurant closed.");
                 continue;
             }
             System.out.println(userChoiceRestaurant.getMenu());
