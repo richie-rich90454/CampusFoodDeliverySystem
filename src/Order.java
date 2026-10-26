@@ -13,6 +13,9 @@ public class Order{
         for (Dish dish: dishes){
             total+=dish.getPrice();
         }
+        if (total<25){
+            total+=2.5;
+        }
         this.customer=new Customer(customer.getName(), customer.getUserID(), customer.getEmail(), customer.getRoomNumber());
         restaurant.setSoldTimes(restaurant.getSoldTimes()+1);
     }
