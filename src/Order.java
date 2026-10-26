@@ -36,7 +36,7 @@ public class Order{
             }
             returnString+=dishNumbers.get(dish)+" x "+dish.getName()+"\n";
         }
-        returnString+="Total: $"+total+"\n";
+        returnString+="Total: $"+total+" (Note: if your order is above $25, you are not required to pay the $2.5 delivery fee)\n";
         return returnString;
     }
     public String getOrderID(){
