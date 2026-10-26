@@ -16,7 +16,7 @@ public class Main{
         ArrayList<Restaurant> restaurants=new ArrayList<Restaurant>();
         //stuff for restaurant 1
         Restaurant coolPizza=new Restaurant("Cool Pizza", true, "Italian", null, 0);
-        ArrayList<Dish> coolPizzaDishes=new ArrayList<>();
+        ArrayList<Dish> coolPizzaDishes=new ArrayList<Dish>();
         coolPizzaDishes.add(new Dish("Margherita Pizza", 12.50));
         coolPizzaDishes.add(new Dish("Fettuccine Alfredo", 14.00));
         coolPizzaDishes.add(new Dish("Medium-well Steak",20.26));
@@ -24,7 +24,7 @@ public class Main{
         restaurants.add(coolPizza);
         //stuff for restaurant 2
         Restaurant busanBowl=new Restaurant("Busan Bowl", true, "Korean", null, 1);
-        ArrayList<Dish> busanBowlDishes=new ArrayList<>();
+        ArrayList<Dish> busanBowlDishes=new ArrayList<Dish>();
         busanBowlDishes.add(new Dish("Kimbap rolls", 19.88));
         busanBowlDishes.add(new Dish("Fried Chicken", 17.35));
         busanBowlDishes.add(new Dish("Busan Specialty", 20.26));
@@ -32,7 +32,7 @@ public class Main{
         restaurants.add(busanBowl);
         //stuff for restaurant 3
         Restaurant sunsetPancakes=new Restaurant("Sunset Pancakes", true, "American", null, 0);
-        ArrayList<Dish> sunsetPancakesDishes=new ArrayList<>();
+        ArrayList<Dish> sunsetPancakesDishes=new ArrayList<Dish>();
         sunsetPancakesDishes.add(new Dish("Maple Syrup with Pancakes", 9.95));
         sunsetPancakesDishes.add(new Dish("French Fries", 9.90));
         sunsetPancakesDishes.add(new Dish("Chicken Sandwich", 10.15));
@@ -53,7 +53,7 @@ public class Main{
             System.out.println(userChoiceRestaurant.getMenu());
             System.out.print("Do you want to order multiple different dishes? (true/false): ");
             boolean multipleDifferentDishes=InputOutput.safeBooleanInput();
-            ArrayList<Dish> dishesOrdered=new ArrayList<>();
+            ArrayList<Dish> dishesOrdered=new ArrayList<Dish>();
             if (multipleDifferentDishes){
                 boolean continueOrdering=true;
                 while (continueOrdering){
