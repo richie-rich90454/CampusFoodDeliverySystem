@@ -10,7 +10,9 @@ public class InputOutput {
             email=input.nextLine();
             if (email.contains("@")){
                 if (email.substring(email.indexOf("@")).contains(".")){
-                    isValid=true;
+                    if (email.substring(email.indexOf("@")).indexOf(".")!=1){
+                        isValid=true;
+                    }
                 }
             }
         }

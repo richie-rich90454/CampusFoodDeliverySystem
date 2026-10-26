@@ -33,7 +33,7 @@ public class Order{
             }
             returnString+=dishNumbers.get(dish)+" x "+dish.getName()+"\n";
         }
-        returnString+="Total: "+total+"\n";
+        returnString+="Total: $"+total+"\n";
         return returnString;
     }
     public String getOrderID(){
