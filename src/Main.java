@@ -47,6 +47,9 @@ public class Main{
             System.out.print("Pick a restaurant (1-3): ");
             int userRestaurantChoice=InputOutput.safeIntInput(1,3)-1;
             Restaurant userChoiceRestaurant=restaurants.get(userRestaurantChoice);
+            if (!userChoiceRestaurant.isOpen()){
+                continue;
+            }
             System.out.println(userChoiceRestaurant.getMenu());
             System.out.print("Do you want to order multiple different dishes (true/false): ");
             boolean multipleDifferentDishes=InputOutput.safeBooleanInput();

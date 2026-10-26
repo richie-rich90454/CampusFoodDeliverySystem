@@ -22,8 +22,10 @@ public class Restaurant {
     public boolean isOpen(){
         return isOpen;
     }
-    public void setOpen(boolean open){
-        isOpen=open;
+    public void updateOpenStatus(){
+        if (soldTimes>=3){
+            isOpen=false;
+        }
     }
     public String getCategory(){
         return category;
@@ -48,6 +50,7 @@ public class Restaurant {
     }
     public void setSoldTimes(int soldTimes){
         this.soldTimes=soldTimes;
+        updateOpenStatus();
     }
     public String toString(){
         String openStatus="CLOSED";
