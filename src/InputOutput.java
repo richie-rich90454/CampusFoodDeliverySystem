@@ -74,10 +74,12 @@ public class InputOutput {
     }
     public static boolean safeBooleanInput(){
         boolean booleanInput=false;
-        while (!booleanInput){
+        boolean isValid=false;
+        while (!isValid){
             String stringInput=input.nextLine().trim().toLowerCase();
             if (stringInput.equals("true")||stringInput.equals("false")){
-                booleanInput=true;
+                booleanInput=stringInput.equals("true");
+                isValid=true;
             }
             else{
                 System.out.print("Please enter a valid boolean input: ");
