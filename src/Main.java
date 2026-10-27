@@ -61,11 +61,16 @@ public class Main{
                     int dishChoice=InputOutput.safeIntInput(1,3)-1;
                     System.out.print("How many? (1-10): ");
                     int dishQuantity=InputOutput.safeIntInput(1,10);
+                    boolean isPastOrderQuantity=(Order.numberOfACertainDish(dishesOrdered, userChoiceRestaurant.getDishes().get(dishChoice))+dishQuantity>10);
+                    if (isPastOrderQuantity){
+                        System.out.println("Note: You could at max only order 10 instances of the same dish per order.");
+                        System.out.print("Do you want to continue ordering? (true/false): ");
+                        continueOrdering=InputOutput.safeBooleanInput();
+                        continue;
+                    }
                     for (int i=0;i<dishQuantity;i++){
-                        if (dishesOrdered.contains())
                         dishesOrdered.add(userChoiceRestaurant.getDishes().get(dishChoice));
                     }
-                    System.out.println("Note: if you have ordered more than 10 instances of the same dish, all orders that add up over that number would be truncated to 10.");
                     System.out.print("Do you want to continue ordering? (true/false): ");
                     continueOrdering=InputOutput.safeBooleanInput();
                 }
@@ -93,5 +98,6 @@ public class Main{
             continueOrders=InputOutput.safeBooleanInput();
             System.out.println("\n\n\n");
         }
+        System.out.println("Thank your for ordering, enjoy your meal!");
     }
 }

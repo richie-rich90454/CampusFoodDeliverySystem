@@ -44,4 +44,11 @@ public class Order{
     public String getOrderID(){
         return orderID;
     }
+    public static int numberOfACertainDish(ArrayList<Dish> dishes, Dish dishToSearch){
+        HashMap<Dish, Integer> dishNumbers=new HashMap<Dish, Integer>();
+        for (Dish dish: dishes){
+            dishNumbers.put(dish, dishNumbers.getOrDefault(dish,0)+1);
+        }
+        return dishNumbers.getOrDefault(dishToSearch, 0);
+    }
 }
