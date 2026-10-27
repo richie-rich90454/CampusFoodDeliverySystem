@@ -77,6 +77,9 @@ public class InputOutput {
             catch (NumberFormatException exception){
                 System.out.print("Please enter a valid boolean input: ");
             }
+            if ((!stringInput.trim().equals("false"))&&booleanInput==false){
+                isValid=false;
+            }
         }
         return booleanInput;
     }
