@@ -52,7 +52,7 @@ public class Order{
     public String getOrderID(){
         return orderID;
     }
-    public boolean setDelivered(boolean delivered){
+    public void setDelivered(boolean delivered){
         this.delivered=delivered;
     }
     public static int numberOfACertainDish(ArrayList<Dish> dishes, Dish dishToSearch){
