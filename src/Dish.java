@@ -17,4 +17,14 @@ public class Dish{
         }
         return false;
     }
+    @Override
+    public boolean equals(Object dish){
+        //reference: https://www.geeksforgeeks.org/java/writer-getclass-method-in-java-with-examples/
+        boolean isCorrectClass=dish.getClass().equals(Dish.class);
+        Dish disToCompare=(Dish)dish;
+        if (isCorrectClass&&this.equals(disToCompare)){
+            return true;
+        }
+        return false;
+    }
 }
