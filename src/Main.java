@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 public class Main{
+//    public static createRestaurants(){
+//
+//    }
     public static void main(String[] args){
         int orderIndex=101;
         System.out.println("Welcome to the campus food delivery system!");
