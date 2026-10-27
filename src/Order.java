@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Order{
-    public String orderID;
-    public ArrayList<Dish> dishes;
-    public double total;
-    public Customer customer;
-    public String restaurantName;
+    private String orderID;
+    private ArrayList<Dish> dishes;
+    private double total;
+    private Customer customer;
+    private String restaurantName;
     public Order(String orderID, ArrayList<Dish> dishes, Customer customer, Restaurant restaurant){
         this.orderID=orderID;
         this.dishes=dishes;
