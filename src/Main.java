@@ -62,8 +62,10 @@ public class Main{
                     System.out.print("How many? (1-10): ");
                     int dishQuantity=InputOutput.safeIntInput(1,10);
                     for (int i=0;i<dishQuantity;i++){
+                        if (dishesOrdered.contains())
                         dishesOrdered.add(userChoiceRestaurant.getDishes().get(dishChoice));
                     }
+                    System.out.println("Note: if you have ordered more than 10 instances of the same dish, all orders that add up over that number would be truncated to 10.");
                     System.out.print("Do you want to continue ordering? (true/false): ");
                     continueOrdering=InputOutput.safeBooleanInput();
                 }
@@ -82,7 +84,6 @@ public class Main{
             System.out.print("\n\n"+userOrder);
             System.out.print("Has the food been delivered? (y/n): ");
             String foodDeliveryStatus=InputOutput.safeStringInput();
-
             while (!foodDeliveryStatus.equals("y")){
                 System.out.print("Has the food been delivered? (y/n): ");
                 foodDeliveryStatus=InputOutput.safeStringInput();
@@ -92,6 +93,5 @@ public class Main{
             continueOrders=InputOutput.safeBooleanInput();
             System.out.println("\n\n\n");
         }
-
     }
 }
