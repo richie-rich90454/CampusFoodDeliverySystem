@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Dish{
     private String name;
     private double price;
@@ -32,5 +34,10 @@ public class Dish{
             return true;
         }
         return false;
+    }
+    @Override
+    public int hashCode(){
+        //reference: https://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java
+        return Objects.hash(name,price);
     }
 }
