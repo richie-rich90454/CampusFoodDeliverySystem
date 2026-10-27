@@ -99,6 +99,6 @@ public class Main{
             continueOrders=InputOutput.safeBooleanInput();
             System.out.println("\n\n\n");
         }
-        System.out.println("Thank your for ordering, "+username+", enjoy your meal!");
+        System.out.println("Thank you for ordering, "+username+", enjoy your meal!");
     }
 }
