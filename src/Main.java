@@ -90,11 +90,9 @@ public class Main{
             System.out.print("Has the food been delivered? (y/n): ");
             String foodDeliveryStatus=InputOutput.safeStringInput();
             while (!foodDeliveryStatus.equals("y")){
+                System.out.print(userOrder.getOrderID()+" - still on the way.\n\n");
                 System.out.print("Has the food been delivered? (y/n): ");
                 foodDeliveryStatus=InputOutput.safeStringInput();
-                if (!foodDeliveryStatus.equals("y")){
-                    System.out.print(userOrder.getOrderID()+" - still on the way.\n\n");
-                }
             }
             System.out.print(userOrder.getOrderID()+" - delivered.\n\n");
             System.out.print("Do you want to make another order? (true/false): ");

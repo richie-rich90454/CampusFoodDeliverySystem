@@ -7,15 +7,18 @@ public class Order{
     private double total;
     private Customer customer;
     private Restaurant restaurant;
+    private boolean hasExtraDeliveryFee;
     public Order(String orderID, ArrayList<Dish> dishes, Customer customer, Restaurant restaurant){
         this.orderID=orderID;
         this.dishes=dishes;
         this.total=0;
+        this.hasExtraDeliveryFee=false;
         for (Dish dish: dishes){
             total+=dish.getPrice();
         }
         if (total<25){
             total+=2.5;
+            hasExtraDeliveryFee=true;
         }
         this.customer=new Customer(customer.getName(), customer.getUserID(), customer.getEmail(), customer.getRoomNumber());
         restaurant.setSoldTimes(restaurant.getSoldTimes()+1);
@@ -38,7 +41,10 @@ public class Order{
             }
             returnString+=dishNumbers.get(dish)+" x "+dish.getName()+"\n";
         }
-        returnString+="Total: $"+total+" (Note: if your order is above $25, you are not required to pay the $2.5 delivery fee)\n";
+        if (hasExtraDeliveryFee){
+            returnString+="Delivery fee: $2.5\n";
+        }
+        returnString+="Total: $"+total+"\n";
         return returnString;
     }
     public String getOrderID(){

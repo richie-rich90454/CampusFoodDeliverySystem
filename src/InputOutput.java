@@ -12,8 +12,15 @@ public class InputOutput {
                 if (email.substring(email.indexOf("@")).contains(".")){
                     if (email.substring(email.indexOf("@")).indexOf(".")!=1){
                         isValid=true;
+                        continue;
                     }
+                    System.out.println("Email must see a real domain added after the @");
+                    continue;
                 }
+                System.out.println("Email must be followed by a domain after the @");
+            }
+            else{
+                System.out.println("Invalid Email (a valid example would be like test@class.com)");
             }
         }
         return email;
