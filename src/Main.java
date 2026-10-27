@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class Main{
     public static void main(String[] args){
-        int orderIndex=100;
+        int orderIndex=101;
         System.out.println("Welcome to the campus food delivery system!");
         System.out.print("Please enter your name: ");
         String username=InputOutput.safeStringInput();
