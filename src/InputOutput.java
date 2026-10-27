@@ -73,19 +73,14 @@ public class InputOutput {
         return intInput;
     }
     public static boolean safeBooleanInput(){
-        boolean isValid=false;
         boolean booleanInput=false;
-        while (!isValid){
-            String stringInput=input.nextLine();
-            try{
-                booleanInput=Boolean.parseBoolean(stringInput);
-                isValid=true;
+        while (!booleanInput){
+            String stringInput=input.nextLine().trim().toLowerCase();
+            if (stringInput.equals("true")||stringInput.equals("false")){
+                booleanInput=true;
             }
-            catch (NumberFormatException exception){
+            else{
                 System.out.print("Please enter a valid boolean input: ");
-            }
-            if ((!stringInput.trim().equals("false"))&&booleanInput==false){
-                isValid=false;
             }
         }
         return booleanInput;
