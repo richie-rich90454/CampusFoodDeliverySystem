@@ -98,6 +98,7 @@ public class Main{
                 foodDeliveryStatus=InputOutput.safeStringInput();
             }
             System.out.print(userOrder.getOrderID()+" - delivered.\n\n");
+            userOrder.setDelivered(true);
             System.out.print("Do you want to make another order? (true/false): ");
             continueOrders=InputOutput.safeBooleanInput();
             System.out.println("\n\n\n");

@@ -8,6 +8,7 @@ public class Order{
     private Customer customer;
     private Restaurant restaurant;
     private boolean hasExtraDeliveryFee;
+    private boolean delivered;
     public Order(String orderID, ArrayList<Dish> dishes, Customer customer, Restaurant restaurant){
         this.orderID=orderID;
         this.dishes=dishes;
@@ -23,6 +24,7 @@ public class Order{
         this.customer=new Customer(customer.getName(), customer.getUserID(), customer.getEmail(), customer.getRoomNumber());
         restaurant.setSoldTimes(restaurant.getSoldTimes()+1);
         this.restaurant=restaurant;
+        this.delivered=false;
     }
     public String toString(){
         String returnString="Order: "+orderID+"\n";
@@ -49,6 +51,9 @@ public class Order{
     }
     public String getOrderID(){
         return orderID;
+    }
+    public boolean setDelivered(boolean delivered){
+        this.delivered=delivered;
     }
     public static int numberOfACertainDish(ArrayList<Dish> dishes, Dish dishToSearch){
         HashMap<Dish, Integer> dishNumbers=new HashMap<Dish, Integer>();
