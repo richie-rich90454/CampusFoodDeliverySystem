@@ -1,21 +1,6 @@
 import java.util.ArrayList;
 public class Main{
-//    public static createRestaurants(){
-//
-//    }
-    public static void main(String[] args){
-        int orderIndex=101;
-        System.out.println("Welcome to the campus food delivery system!");
-        System.out.print("Please enter your name: ");
-        String username=InputOutput.safeStringInput();
-        System.out.print("Please enter your ID: ");
-        String userID=InputOutput.safeStringInput();
-        String email=InputOutput.validEmailInput();
-        System.out.print("Please enter your delivery location: ");
-        int location=InputOutput.safeIntInput();
-        Customer customer=new Customer(username,userID,email,location);
-        customer.printWelcomeMessage();
-        ArrayList<Restaurant> restaurants=new ArrayList<Restaurant>();
+    public static void createRestaurants(ArrayList<Restaurant> restaurants){
         //stuff for restaurant 1
         Restaurant coolPizza=new Restaurant("Cool Pizza", true, "Italian", null, 0);
         ArrayList<Dish> coolPizzaDishes=new ArrayList<Dish>();
@@ -40,6 +25,21 @@ public class Main{
         sunsetPancakesDishes.add(new Dish("Chicken Sandwich", 10.15));
         sunsetPancakes.setDishes(sunsetPancakesDishes);
         restaurants.add(sunsetPancakes);
+    }
+    public static void main(String[] args){
+        int orderIndex=101;
+        System.out.println("Welcome to the campus food delivery system!");
+        System.out.print("Please enter your name: ");
+        String username=InputOutput.safeStringInput();
+        System.out.print("Please enter your ID: ");
+        String userID=InputOutput.safeStringInput();
+        String email=InputOutput.validEmailInput();
+        System.out.print("Please enter your delivery location: ");
+        int location=InputOutput.safeIntInput();
+        Customer customer=new Customer(username,userID,email,location);
+        customer.printWelcomeMessage();
+        ArrayList<Restaurant> restaurants=new ArrayList<Restaurant>();
+        createRestaurants(restaurants);
         boolean continueOrders=true;
         while (continueOrders){
             System.out.println("---------------Menu---------------");
