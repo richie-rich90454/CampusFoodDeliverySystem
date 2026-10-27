@@ -26,18 +26,6 @@ public class Customer{
     public int getRoomNumber(){
         return roomNumber;
     }
-    public void setName(String name){
-        this.name=name;
-    }
-    public void setUserID(String userID){
-        this.userID=userID;
-    }
-    public void setEmail(String email){
-        this.email=email;
-    }
-    public void setOrder(Order order){
-        this.order=order;
-    }
     public void printWelcomeMessage(){
         System.out.println("Welcome, "+name+"! Your food goes to "+roomNumber);
     }
