@@ -22,7 +22,7 @@ public class Order{
         }
         this.customer=new Customer(customer.getName(), customer.getUserID(), customer.getEmail(), customer.getRoomNumber());
         restaurant.setSoldTimes(restaurant.getSoldTimes()+1);
-        this.restaurant=new Restaurant(restaurant.getName(), restaurant.isOpen(), restaurant.getCategory(), restaurant.getDishes(), restaurant.getSoldTimes());
+        this.restaurant=restaurant;
     }
     public String toString(){
         String returnString="Order: "+orderID+"\n";
