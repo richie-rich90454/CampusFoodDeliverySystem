@@ -12,6 +12,9 @@ public class Dish{
         return price;
     }
     public boolean equals(Dish dish){
+        if (dish==null){
+            return false;
+        }
         if (this.name.equals(dish.name)&&this.price==dish.price){
             return true;
         }
@@ -20,6 +23,9 @@ public class Dish{
     @Override
     public boolean equals(Object dish){
         //reference: https://www.geeksforgeeks.org/java/writer-getclass-method-in-java-with-examples/
+        if (dish==null){
+            return false;
+        }
         boolean isCorrectClass=dish.getClass().equals(Dish.class);
         Dish disToCompare=(Dish)dish;
         if (isCorrectClass&&this.equals(disToCompare)){
